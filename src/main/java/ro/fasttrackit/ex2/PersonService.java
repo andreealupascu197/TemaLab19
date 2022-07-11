@@ -3,6 +3,8 @@ package ro.fasttrackit.ex2;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 public class PersonService {
     final List<Person> person;
 
@@ -64,7 +66,7 @@ public class PersonService {
         return person.stream()
                 .map(Person::firstName)
                 //.map(String::toUpperCase)
-                .map(i ->i.substring(0,1).toUpperCase() + i.substring(1))
+                .map(i -> i.substring(0, 1).toUpperCase() + i.substring(1))
                 .collect(Collectors.toSet());
     }
 
@@ -90,10 +92,21 @@ public class PersonService {
         return result;
     }
 
-    public Map<Integer, List<Person>> groupByAge(List<Person> person) {
-        Map<Integer, List<Person>> result = person.stream()
-                .collect(Collectors.groupingBy(Person::age));
-        return result;
+    public static Map<String, Integer> groupByAge(List<Person> person) {
+        if (person == null) {
+            return Map.of();
+        }
+       Map<String, Integer> group = person.stream().
+               collect(Collectors.toMap(Person::firstName,Person::age));
+
+
+        return group;
+
+        //Map<String, List<Integer>> userNameAndAgeTrend
+        // = users.stream().collect(Collectors.groupingBy(user-> user.getName(),
+        // Collectors.mapping(u-> u.getAge(), toList())));
+
+
     }
 
     public List<String> getFirstNameAndInitial(List<Person> persons) {

@@ -8,21 +8,22 @@ public class PersonMain {
                 , new Person("mihai", "Popescu", 26, "iasi")
                 , new Person("aurel", "radu", 17, "brasov"));
 
+
         System.out.println(persons);
-        PersonService personService = new PersonService(persons);
-        System.out.println(personService.getPersonNames(persons));
-        System.out.println(personService.getPersonsFromCluj(persons));
-        System.out.println(personService.getMajorPersons(persons));
-        System.out.println(personService.getPersonFromIasiOrCluj(persons));
-        System.out.println(personService.getFirstNameCapitalized(persons));
-        System.out.println(personService.getPersonsBetween18and60(18, 60, persons));
-        System.out.println(personService.getPersonsWithA(persons));
-        System.out.println(personService.getUniqueFirstName(persons));
-        System.out.println(personService.sortByFirstName(persons));
-        System.out.println(personService.sortByLastName(persons));
-        System.out.println(personService.sortByMultipleFilters(persons));
-        System.out.println(personService.groupByAge(persons));
-        System.out.println(personService.getFirstNameAndInitial(persons));
+//        PersonService personService = new PersonService(persons);
+//        System.out.println(personService.getPersonNames(persons));
+//        System.out.println(personService.getPersonsFromCluj(persons));
+//        System.out.println(personService.getMajorPersons(persons));
+//        System.out.println(personService.getPersonFromIasiOrCluj(persons));
+//        System.out.println(personService.getFirstNameCapitalized(persons));
+//        System.out.println(personService.getPersonsBetween18and60(18, 60, persons));
+//        System.out.println(personService.getPersonsWithA(persons));
+//        System.out.println(personService.getUniqueFirstName(persons));
+//        System.out.println(personService.sortByFirstName(persons));
+//        System.out.println(personService.sortByLastName(persons));
+//        System.out.println(personService.sortByMultipleFilters(persons));
+        System.out.println(PersonService.groupByAge(persons));
+//        System.out.println(personService.getFirstNameAndInitial(persons));
 
 
     }
